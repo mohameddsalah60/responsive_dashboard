@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/views/widgets/custom_drawer.dart';
 
 import 'all_expansess_qnd_quickInvoice.dart';
-import 'my_cards_page_view.dart';
+import 'my_cards_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -20,7 +20,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         SizedBox(
           width: 24,
         ),
-        Expanded(child: MyCardPageView()),
+        Expanded(child: MyCardsSection()),
       ],
     );
   }
