@@ -4,6 +4,8 @@ import 'package:responsive_dashboard/views/widgets/all_expansess.dart';
 import 'package:responsive_dashboard/views/widgets/custom_drawer.dart';
 import 'package:responsive_dashboard/views/widgets/quick_invoice.dart';
 
+import 'all_expansess_qnd_quickInvoice.dart';
+
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
 
@@ -15,16 +17,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         SizedBox(
           width: 32,
         ),
-        Expanded(
-            flex: 2,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  AllExpansess(),
-                  QuickInvoice(),
-                ],
-              ),
-            )),
+        Expanded(flex: 2, child: AllExpansessAndQuickInvoice()),
       ],
     );
   }
