@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/views/widgets/custom_drawer.dart';
@@ -21,7 +22,13 @@ class DashboardDesktopLayout extends StatelessWidget {
         SizedBox(
           width: 24,
         ),
-        Expanded(child: IncomeSection()),
+        Expanded(
+            child: Column(
+          children: [
+            Expanded(flex: 2, child: MyCardsAndTransactionHistory()),
+            Expanded(child: IncomeSection()),
+          ],
+        )),
       ],
     );
   }
