@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/views/widgets/custom_drawer.dart';
 
 import 'all_expansess_qnd_quickInvoice.dart';
+import 'income_section.dart';
 import 'mycards_and_transaction_history.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
@@ -20,7 +21,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         SizedBox(
           width: 24,
         ),
-        Expanded(child: MyCardsAndTransactionHistory()),
+        Expanded(child: IncomeSection()),
       ],
     );
   }
