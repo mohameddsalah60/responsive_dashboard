@@ -12,7 +12,7 @@ class CustomBackgroundContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(padding ?? 20),
-      margin: MediaQuery.sizeOf(context).width < 800
+      margin: MediaQuery.sizeOf(context).width > 800
           ? const EdgeInsets.only(top: 24)
           : null,
       decoration: ShapeDecoration(

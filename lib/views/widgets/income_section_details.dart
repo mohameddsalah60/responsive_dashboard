@@ -17,15 +17,8 @@ class IncomeSectionDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: item.length,
-      itemBuilder: (context, index) {
-        return ItemDetail(
-          incomeItemDetailModel: item[index],
-        );
-      },
+    return Column(
+      children: item.map((e) => ItemDetail(incomeItemDetailModel: e)).toList(),
     );
   }
 }
