@@ -35,9 +35,13 @@ class ActiveItemListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(darwerItemModel.image),
-      title: Text(
-        darwerItemModel.title,
-        style: AppStyles.styleBold16(context),
+      title: FittedBox(
+        alignment: AlignmentDirectional.centerStart,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          darwerItemModel.title,
+          style: AppStyles.styleBold16(context),
+        ),
       ),
       trailing: Container(
         width: 3.27,
