@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/size_config.dart';
 
@@ -13,18 +14,24 @@ class IncomeSectionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-    return width >= SizeConfig.desktop && width < 1750
-        ? const Expanded(
-            child: Padding(
-            padding: EdgeInsets.all(16),
-            child: DetailedIncomeSectionChart(),
-          ))
-        : const Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(child: IncomeSectionChart()),
-              Expanded(child: IncomeSectionDetails()),
-            ],
-          );
+    if (width <= 390) {
+      return const Padding(
+        padding: EdgeInsets.all(16),
+        child: DetailedIncomeSectionChart(),
+      );
+    } else if (width >= SizeConfig.desktop && width <= 1620) {
+      return const Padding(
+        padding: EdgeInsets.all(16),
+        child: DetailedIncomeSectionChart(),
+      );
+    } else {
+      return const Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(child: IncomeSectionChart()),
+          Expanded(flex: 2, child: IncomeSectionDetails()),
+        ],
+      );
+    }
   }
 }

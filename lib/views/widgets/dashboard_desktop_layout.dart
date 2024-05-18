@@ -34,9 +34,8 @@ class DashboardDesktopLayout extends StatelessWidget {
                     Expanded(
                         child: Column(
                       children: [
-                        Expanded(
-                            flex: 2, child: MyCardsAndTransactionHistory()),
-                        Expanded(child: IncomeSection()),
+                        MyCardsAndTransactionHistory(),
+                        IncomeSection(),
                       ],
                     )),
                   ],

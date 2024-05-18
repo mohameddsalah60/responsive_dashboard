@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class AllExpensesItemHeader extends StatelessWidget {
@@ -11,21 +12,28 @@ class AllExpensesItemHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          padding: const EdgeInsets.all(14),
-          decoration: ShapeDecoration(
-            shape: const OvalBorder(),
-            color: isActive
-                ? Colors.white.withOpacity(.09)
-                : const Color(0xffFAFAFA),
-          ),
-          child: SvgPicture.asset(
-            image,
-            colorFilter: ColorFilter.mode(
-                isActive ? Colors.white : const Color(0xff4EB7F2),
-                BlendMode.srcIn),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                  shape: const OvalBorder(),
+                  color: isActive
+                      ? Colors.white.withOpacity(.09)
+                      : const Color(0xffFAFAFA),
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    image,
+                    colorFilter: ColorFilter.mode(
+                        isActive ? Colors.white : const Color(0xff4EB7F2),
+                        BlendMode.srcIn),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
         const Expanded(child: SizedBox()),

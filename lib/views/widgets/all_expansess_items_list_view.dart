@@ -38,6 +38,55 @@ class _AllExpansessItemsListViewState extends State<AllExpansessItemsListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                itemClick = 0;
+              });
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: items[0],
+              isActive: 0 == itemClick,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                itemClick = 1;
+              });
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: items[1],
+              isActive: 1 == itemClick,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                itemClick = 2;
+              });
+            },
+            child: AllExpensesItem(
+              allExpensesItemModel: items[2],
+              isActive: 2 == itemClick,
+            ),
+          ),
+        ),
+      ],
+    );
+    return Row(
       children: items.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
@@ -49,14 +98,9 @@ class _AllExpansessItemsListViewState extends State<AllExpansessItemsListView> {
                 itemClick = index;
               });
             },
-            child: Padding(
-              padding: index == 1
-                  ? const EdgeInsets.symmetric(horizontal: 12)
-                  : const EdgeInsets.symmetric(),
-              child: AllExpensesItem(
-                allExpensesItemModel: item,
-                isActive: index == itemClick,
-              ),
+            child: AllExpensesItem(
+              allExpensesItemModel: item,
+              isActive: index == itemClick,
             ),
           ),
         );
